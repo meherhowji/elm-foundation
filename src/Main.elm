@@ -6,7 +6,7 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 
 import Foundation.CDN as CDN
-import Foundation.Grid as Grid
+import Foundation.Grid exposing (container, containerFluid, containerFull, gridx)
 
 
 ---- MODEL ----
@@ -40,12 +40,13 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    Grid.container []
+    container []
             [ CDN.stylesheet
-            , Grid.gridx [] []
-            , p [] []
+            , gridx
+                -- ["grid-padding-x", "large-up-6", "medium-up-6", "small-12"]
+                ["test" "test1"]
+                []
             ]
-
 
 
 ---- PROGRAM ----

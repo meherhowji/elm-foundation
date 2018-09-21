@@ -7,6 +7,6 @@ stylesheet : Html msg
 stylesheet =
     node "link"
         [ rel "stylesheet"
-        , href "./foundation-xy.css"
+        , href "foundation-xy.css"
         ]
         []

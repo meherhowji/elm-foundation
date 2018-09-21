@@ -15,7 +15,7 @@ stylesheetFont : Html msg
 stylesheetFont = 
     node "link"
         [ rel "stylesheet"
-        , href "https://fonts.googleapis.com/css?family=Abril+Fatface|Fredoka+One" ]
+        , href "https://fonts.googleapis.com/css?family=Knewave|Fredoka+One" ]
         []
 
 stylesheetTheme : Html msg

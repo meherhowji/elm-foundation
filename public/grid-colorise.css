@@ -4,20 +4,23 @@ body {
     font-family: 'Fredoka One', cursive;
 }
 h1, h4 {
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Knewave';
     padding: 20px;
     text-align: center;
 }
-
+h4 {
+    padding-top: 0;
+}
 .grid-x {
-    background: #cc5599;
+    background: #d1ccc0;
     border-radius: 4px;
+    color: #454545;
 }
 
 .cell {
     font-weight: 300;
     letter-spacing: 2px;
-    background-color: #a32c85;
+    background-color: #ffda79;
     border-radius: 4px;
     text-align: center;
     font-size: 12px;

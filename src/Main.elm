@@ -6,7 +6,9 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 
 import Foundation.CDN as CDN
-import Foundation.Grid exposing (container, containerFluid, containerFull, gridx)
+import Foundation.Grid exposing (..)
+import Foundation.Classnames exposing (..)
+
 
 
 ---- MODEL ----
@@ -24,10 +26,8 @@ init =
 
 ---- UPDATE ----
 
-
 type Msg
     = NoOp
-
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
@@ -37,20 +37,21 @@ update msg model =
 
 ---- VIEW ----
 
-
 view : Model -> Html Msg
 view model =
     container []
             [ CDN.stylesheet
-            , gridx
-                -- ["grid-padding-x", "large-up-6", "medium-up-6", "small-12"]
-                ["test" "test1"]
-                []
-            ]
+            , h2 [] [text "Foundation Grid XY"]
+            , grid [gridX, gridPaddingx]
+                [ cell [medium6, large6, small6] 
+                  [text "Milky Way"]
+                , cell [medium6, large6, small6] 
+                  [text "Andromeda"]
+                ]
+            ] 
 
 
 ---- PROGRAM ----
-
 
 main : Program () Model Msg
 main =

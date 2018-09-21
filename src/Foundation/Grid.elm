@@ -1,8 +1,11 @@
 module Foundation.Grid exposing ( container
         , containerFluid
         , containerFull
-        , gridx
+        , grid
+        , cell
     )
+import Foundation.Classnames exposing (..)
+import String exposing (..)
 
 import Html exposing (Html, div, Attribute)
 import Html.Attributes exposing (class, classList)
@@ -10,20 +13,27 @@ import Html.Attributes exposing (class, classList)
 
 container : List (Attribute msg) -> List (Html msg) -> Html msg
 container attributes children =
-    div ([ class "grid-container" ] ++ attributes) children
+    div ([ class gridContainer ] ++ attributes) children
 
 containerFluid : List (Attribute msg) -> List (Html msg) -> Html msg
 containerFluid attributes children =
-    div ([ class "grid-container fluid" ] ++ attributes) children
+    div ([ class gridContainerFluid ] ++ attributes) children
 
 
 containerFull : List (Attribute msg) -> List (Html msg) -> Html msg
 containerFull attributes children =
-    div ([ class "grid-container full" ] ++ attributes) children
+    div ([ class gridContainerFull ] ++ attributes) children
 
 
-gridx : List (Attribute msg) -> List (Html msg) -> Html msg
-gridx attributes children =
+grid : List (String) -> List (Html msg) -> Html msg
+grid classes children=
     div
-    ([ class <| "row" "flex-items" ] ++ attributes)
+    ([ class (join " " classes) ])
     children
+
+cell : List (String) -> List (Html msg) -> Html msg
+cell classes children=
+    div
+    ([ class ("cell " ++ (join " " classes)) ])
+    children
+

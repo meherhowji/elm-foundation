@@ -15,7 +15,7 @@ stylesheetFont : Html msg
 stylesheetFont = 
     node "link"
         [ rel "stylesheet"
-        , href "https://fonts.googleapis.com/css?family=Knewave|Fredoka+One" ]
+        , href "https://fonts.googleapis.com/css?family=Knewave|Roboto:500" ]
         []
 
 stylesheetTheme : Html msg

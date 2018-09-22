@@ -2,16 +2,19 @@ body {
     background-color: #2c2c54;
     color: white;
     font-family: 'Roboto', cursive;
+    padding: 20px;
 }
 
 h1, h4 {
-    font-family: 'Knewave';
+    font-family: 'Playfair Display';
     padding: 20px;
     text-align: center;
+    font-size: 72px;
 }
 
 h4 {
     padding-top: 0;
+    font-size: 24px;
 }
 
 .grid-x {

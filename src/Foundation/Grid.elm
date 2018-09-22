@@ -31,9 +31,9 @@ grid classes children=
     ([ class (join " " classes) ])
     children
 
-cell : List (String) -> List (Html msg) -> Html msg
-cell classes children=
+cell : List (String) -> List (Attribute msg) -> List (Html msg) -> Html msg
+cell classes attributes children=
     div
-    ([ class ("cell " ++ (join " " classes)) ])
+    ([ class ("cell " ++ (join " " classes)) ] ++ attributes)
     children
 

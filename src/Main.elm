@@ -45,7 +45,7 @@ view model =
             , CDN.stylesheetTheme 
             , h1 [] 
                 [ text "Elm Foundation"
-                  , h4 [] [text "xy grid"]
+                  , h4 [] [text "XY Grid"]
                 ]
             , grid [gridX, gridMarginx, gridPaddingy, gridMarginy]
                 [ cell [medium1, large1, small1] 
@@ -88,9 +88,9 @@ view model =
                   [text "4"]
                 ]
             , grid [gridX, gridMarginx, gridPaddingy, gridMarginy]
-                [ cell [medium6, large6, small6] 
+                [ cell [medium6, large6, small6] [] 
                   [text "MEDIUM 6"]
-                , cell [medium6, large6, small6] 
+                , cell [medium6, large6, small6] ["data"] 
                   [text "MEDIUM 6"]
                 ]
             ] 

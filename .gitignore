@@ -5,3 +5,4 @@ repl-temp-*
 .DS_Store
 .idea
 node_modules
+**/elm-stuff

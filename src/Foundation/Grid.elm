@@ -1,6 +1,4 @@
 module Foundation.Grid exposing ( container
-        , containerFluid
-        , containerFull
         , grid
         , cell
     )
@@ -10,27 +8,28 @@ import String exposing (..)
 import Html exposing (Html, div, Attribute)
 import Html.Attributes exposing (class, classList)
 
+type ContainerWidth
+    = Normal
+    | Full
+    | Fluid
 
-container : List (Attribute msg) -> List (Html msg) -> Html msg
-container attributes children =
-    div ([ class gridContainer ] ++ attributes) children
+type Config =
+    Container
+    | Direction
+    | Gutter
 
-containerFluid : List (Attribute msg) -> List (Html msg) -> Html msg
-containerFluid attributes children =
-    div ([ class gridContainerFluid ] ++ attributes) children
+container : ContainerWidth -> Html msg
+container width =
+    div ([ class (if width == Full then gridContainerFull else gridContainerFluid)]) []
 
-
-containerFull : List (Attribute msg) -> List (Html msg) -> Html msg
-containerFull attributes children =
-    div ([ class gridContainerFull ] ++ attributes) children
-
-
-grid : List (String) -> List (Html msg) -> Html msg
+grid : List (Config) -> List (Html msg) -> Html msg
 grid classes children=
     div
-    ([ class (join " " classes) ])
+    ([])
     children
 
+
+-- TODO: refactor
 cell : List (String) -> List (Attribute msg) -> List (Html msg) -> Html msg
 cell classes attributes children=
     div

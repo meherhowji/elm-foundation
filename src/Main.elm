@@ -39,7 +39,7 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    container []
+    container Full
             [ CDN.stylesheet
             , CDN.stylesheetFont
             , CDN.stylesheetTheme 

@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "elm-app start",
+    "start": "elm-app start --debug",
     "test": "elm-test"
   },
   "repository": {

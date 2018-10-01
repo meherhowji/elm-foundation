@@ -2,13 +2,22 @@ module Main exposing (..)
 
 import Browser
 import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
 
 import Foundation.CDN as CDN
-import Foundation.Grid exposing (..)
+import Foundation.Grid exposing (container, grid, cell, direction, gutter, ContainerWidth(..), Spacing(..), HorizontalOrVertical(..), direction, gutter, cell)
 import Foundation.Classnames exposing (..)
 
+
+---- PROGRAM ----
+
+main : Program () Model Msg
+main =
+    Browser.element
+        { view = view
+        , init = \_ -> init
+        , update = update
+        , subscriptions = always Sub.none
+        }
 
 
 ---- MODEL ----
@@ -39,70 +48,15 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    container Full
+        div []
             [ CDN.stylesheet
             , CDN.stylesheetFont
-            , CDN.stylesheetTheme 
-            , h1 [] 
-                [ text "Elm Foundation"
-                  , h4 [] [text "XY Grid"]
+            , CDN.stylesheetTheme
+            , grid
+                [ container Fluid, direction X, gutter Margin ]
+                [ cell [] [ text "cell" ]
+                , cell [] [ text "cell" ]
+                , cell [] [ text "cell" ]
                 ]
-            , grid [gridX, gridMarginx, gridPaddingy, gridMarginy]
-                [ cell [medium1, large1, small1] 
-                  [text "1"]
-                , cell [medium2, large2, small2] 
-                  [text "2"]
-                , cell [medium1, large1, small1] 
-                  [text "1"]
-                , cell [medium2, large2, small2] 
-                  [text "2"]
-                , cell [medium1, large1, small1] 
-                  [text "1"]
-                , cell [medium2, large2, small2] 
-                  [text "2"]
-                , cell [medium1, large1, small1] 
-                  [text "1"]
-                , cell [medium2, large2, small2] 
-                  [text "2"]
-                ]
-            , grid [gridX, gridMarginx, gridPaddingy, gridMarginy]
-                [ cell [medium2, large2, small2] 
-                  [text "2"]
-                , cell [medium2, large2, small2] 
-                  [text "2"]
-                , cell [medium2, large2, small2] 
-                  [text "2"]
-                , cell [medium2, large2, small2] 
-                  [text "2"]
-                , cell [medium2, large2, small2] 
-                  [text "2"]
-                , cell [medium2, large2, small2] 
-                  [text "2"]
-                ]
-            , grid [gridX, gridMarginx, gridPaddingy, gridMarginy]
-                [ cell [medium4, large4, small4] 
-                  [text "4"]
-                , cell [medium4, large4, small4] 
-                  [text "4"]
-                , cell [medium4, large4, small4] 
-                  [text "4"]
-                ]
-            , grid [gridX, gridMarginx, gridPaddingy, gridMarginy]
-                [ cell [medium6, large6, small6] [] 
-                  [text "MEDIUM 6"]
-                , cell [medium6, large6, small6] ["data"] 
-                  [text "MEDIUM 6"]
-                ]
-            ] 
+            ]
 
-
----- PROGRAM ----
-
-main : Program () Model Msg
-main =
-    Browser.element
-        { view = view
-        , init = \_ -> init
-        , update = update
-        , subscriptions = always Sub.none
-        }

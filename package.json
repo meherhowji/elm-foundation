@@ -1,0 +1,31 @@
+{
+  "name": "elm-foundation",
+  "version": "0.0.1",
+  "description": "elm package for foundation framework",
+  "main": "src/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "elm-app start --debug",
+    "test": "elm-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meherranjan/elm-foundation.git"
+  },
+  "keywords": [
+    "elm",
+    "foundation",
+    "javascript",
+    "elm-lang",
+    "css",
+    "functional"
+  ],
+  "author": "Meher R Howji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meherranjan/elm-foundation/issues"
+  },
+  "homepage": "https://github.com/meherranjan/elm-foundation#readme"
+}

@@ -2,3 +2,7 @@
 elm-stuff
 # elm-repl generated files
 repl-temp-*
+.DS_Store
+.idea
+node_modules
+**/elm-stuff

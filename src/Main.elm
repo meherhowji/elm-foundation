@@ -2,18 +2,27 @@ module Main exposing (..)
 
 import Browser
 import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
 
 import Foundation.CDN as CDN
-import Foundation.Grid as Grid
+import Foundation.Grid exposing (container, grid, cell, direction, gutter, ContainerWidth(..), Spacing(..), HorizontalOrVertical(..), direction, gutter, cell)
+import Foundation.Classnames exposing (..)
+
+
+---- PROGRAM ----
+
+main : Program () Model Msg
+main =
+    Browser.element
+        { view = view
+        , init = \_ -> init
+        , update = update
+        , subscriptions = always Sub.none
+        }
 
 
 ---- MODEL ----
 
-
-type alias Model =
-    {}
+type alias Model = {}
 
 
 init : ( Model, Cmd Msg )
@@ -24,10 +33,7 @@ init =
 
 ---- UPDATE ----
 
-
-type Msg
-    = NoOp
-
+type Msg = NoOp
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
@@ -37,25 +43,17 @@ update msg model =
 
 ---- VIEW ----
 
-
 view : Model -> Html Msg
 view model =
-    Grid.container []
+        div []
             [ CDN.stylesheet
-            , Grid.gridx [] []
-            , p [] []
+            , CDN.stylesheetFont
+            , CDN.stylesheetTheme
+            , grid
+                [ container Fluid, direction X, gutter Margin ]
+                [ cell [] [ text "cell" ]
+                , cell [] [ text "cell" ]
+                , cell [] [ text "cell" ]
+                ]
             ]
 
-
-
----- PROGRAM ----
-
-
-main : Program () Model Msg
-main =
-    Browser.element
-        { view = view
-        , init = \_ -> init
-        , update = update
-        , subscriptions = always Sub.none
-        }

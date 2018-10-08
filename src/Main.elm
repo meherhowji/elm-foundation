@@ -22,9 +22,7 @@ main =
 
 ---- MODEL ----
 
-
-type alias Model =
-    {}
+type alias Model = {}
 
 
 init : ( Model, Cmd Msg )
@@ -35,8 +33,7 @@ init =
 
 ---- UPDATE ----
 
-type Msg
-    = NoOp
+type Msg = NoOp
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
